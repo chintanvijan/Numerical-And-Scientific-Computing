@@ -1,0 +1,29 @@
+#Program 2
+from prettytable import PrettyTable as pt
+s1=[]
+main_list=[]
+ch=1
+while(ch!=0):
+    x = int(input("Enter x:"))
+    n = int(input("Enter n:"))
+    s=0
+    s1.append(x)
+    s1.append(n)
+    for i in range(n,-1,-1):
+        s=s+(1/(x**i))
+    t1 = s
+    s1.append(s)
+    r = (1/(x**2))/(1/x)
+    s=(1-(r**n))/(1-r)
+    t2=s
+    s1.append(s)
+    s1.append(t1-t2)
+    s1.append((t1-t2)/t1)
+    main_list.append(s1)
+    s1=[]
+    ch=int(input("Press 1 to continue and 0 to exit!"))
+col_names = ["x","n","alpha","beta","absolute error","relative error"]
+t=pt(col_names)
+for i in range(len(main_list)):
+    t.add_row(main_list[i])
+print(t)    
