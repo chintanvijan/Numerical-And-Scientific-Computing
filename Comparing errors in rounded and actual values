@@ -1,0 +1,20 @@
+from prettytable import PrettyTable as pt
+li_main = []
+ch = 1
+while(ch==1):
+	x = float(input("Enter number:"))
+	y = round(x)
+	if x>y:
+		abse = x-y
+	elif y>x:
+		abse = y-x
+	rele = abse/x
+	pere = rele*100
+	li=[x,y,abse,rele,pere]
+	li_main.append(li)
+	ch = int(input("Want to compare more?(1/0)"))
+col_names = ["Actual Number","Rounded Number","Absolute Error","Relative Error","Percentage Error"]
+t=pt(col_names)
+for i in range(len(li_main)):
+        t.add_row(li_main[i])
+print(t)
