@@ -1,0 +1,52 @@
+import math
+coeff = []
+limits = [0,0]
+f=0
+s=0
+k=0
+degree = int(input("Enter degree of equation:"))
+for i in range(degree,-1,-1):
+	inp=int(input("Enter coefficient of x^"+str(i)))
+	coeff.append(inp)
+while(1):
+	
+	for i,j in zip(range(degree,-1,-1),range(0,degree+1)):
+		s=s+(coeff[j]*(f**i))
+	limits.append(s)
+	if s==0:
+		print("Root of the equation is :",f)
+	s=0
+	if (limits[0]>0 and limits[1]<0) or (limits[0]<0 and limits[1]>0):
+		break
+	limits = [limits[1]]
+	f = f+1
+m=f-1
+lim = [m,f]
+templim=limits
+limits=[]
+while 1:
+	t = (lim[0]+lim[1])/2
+	for i,j in zip(range(degree,-1,-1),range(0,degree+1)):
+		s=s+(coeff[j]*(t**i))
+	limits.append(s)
+	s=0
+	if limits[k]<0 and templim[0]<0:
+		templim[0]=limits[k]
+		lim[0]=t
+	elif limits[k]<0 and templim[1]<0:
+		templim[1]=limits[k]
+		lim[1]=t
+	elif limits[k]>0 and templim[0]>0:
+		templim[0]=limits[k]
+		lim[0]=t
+	elif limits[k]>0 and templim[1]>0:
+		templim[1]=limits[k]
+		lim[1]=t
+	print(lim)
+	if k>=1:
+		if round(limits[k],3) == round(limits[k-1],3):
+			n=round(lim[1],3)
+			print("Root of eqn is:",n)
+			break
+	k=k+1
+        
