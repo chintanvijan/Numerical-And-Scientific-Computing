@@ -1,3 +1,4 @@
+#Secant method for evaluating roots of an equation
 coeff=[]
 lim=[]
 f1=0
