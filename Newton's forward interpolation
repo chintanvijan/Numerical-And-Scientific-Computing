@@ -1,0 +1,25 @@
+gap = int(input("Enter value of interval gap:"))
+ran = int(input("Enter range:"))
+fx = []
+f=[]
+for i in range(0,ran+1):
+	t=i*gap
+	inp = float(input("Enter value of f(x) for x="+str(t)))
+	inp=round(inp,2)
+	fx.append(inp)
+f.append(fx)
+fx=[]
+k=len(f)-1
+c=0
+while 1:
+	for j in range(len(f[c])-1):
+		t=f[c][j+1]-f[c][j]
+		t=round(t,2)
+		fx.append(t)
+	f.append(fx)
+	fx=[]
+	c=c+1
+	if len(f[c])==1:
+		break
+print(f)
+#to be continued (not completed)
