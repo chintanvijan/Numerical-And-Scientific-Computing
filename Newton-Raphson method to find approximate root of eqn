@@ -1,4 +1,4 @@
-#Newton Raphson method 
+#Newton Raphson method to find approximate root of an equation
 coeff=[]
 dervcoeff=[]
 f1=0
