@@ -16,6 +16,6 @@ t=(-coeff[1]+d)/(2*coeff[0])
 ev.append(t)
 t=(-coeff[1]-d)/(2*coeff[0])
 ev.append(t)
-print(ev)
+print(ev) #characterstic variable values
 
 #to be completed..
