@@ -1,3 +1,4 @@
+#finding eigen vectors
 m=[[0 for i in range(2)]for j in range(2)]
 print("Enter elements of (2X2) matrix:")
 for i in range(0,2):
