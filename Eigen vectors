@@ -17,11 +17,12 @@ ev.append(t)
 t=(-coeff[1]-d)/(2*coeff[0])
 ev.append(t)
 #print(ev) 
+"""
 for i in range(len(ev)):
 	temp=m
 	for j in range(0,2):
 		for k in range(0,2):
 			if j==k:
 				m[j][k]=m[j][k]-ev[i]
-
+"""
 #to be completed..
