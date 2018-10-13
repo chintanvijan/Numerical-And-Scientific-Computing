@@ -1,0 +1,81 @@
+#Simpson's 1/3rd rule and Simpson's 3/8th rule
+x0 = int(input("Enter first value of x:"))
+xn = int(input("Enter last value of x:"))
+n = int(input("Enter number of iterations:"))
+h = ((xn-x0)/n)
+x=[x0]
+f=0
+m=x0
+y=[]
+print(h)
+while (m+h)!=xn:
+	x.append(m+h)
+	m=m+h
+x.append(xn)
+#print(x)
+degree = int(input("Enter degree of f(x):"))
+coeff=[]
+for i in range(degree,-1,-1):
+	inp = int(input("Enter coefficient of x^"+str(i)+":"))
+	coeff.append(inp)
+power = float(input("Enter power of f(x)"))
+#print(x)
+for i in range(len(x)):
+	for j,k in zip(range(len(coeff)),range(degree,-1,-1)):
+		f = f+coeff[j]*(x[i]**k)
+	f=f**power
+	y.append(f)
+	f=0
+print(y)
+s1=0
+s2=0
+for i in range(1,len(y)-1):
+	if i%2==0:
+		s1=s1+y[i]
+	else:
+		s2=s2+y[i]
+#print(s1,s2)
+I1 = ((1/3)*h)*((y[0]+y[-1])+(4*s2)+(2*s1))
+print("Value of I using Simpson's 1/3rd rule:",I1)
+s1=0
+s2=0
+for i in range(1,len(y)-1):
+	if i%3==0:
+		s1=s1+y[i]
+	else:
+		s2=s2+y[i]
+I2 = ((3/8)*h)*((y[0]+y[-1])+(3*s2)+(2*s1))
+print("Value of I using Simpson's 3/8th rule:",I2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
