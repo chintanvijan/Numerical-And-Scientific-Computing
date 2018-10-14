@@ -1,0 +1,21 @@
+#Gauss Elimination method
+order = int(input("Enter order of augumented matrix:"))
+m = [[0 for i in range(0,order+1)]for j in range(0,order)]
+x = [0 for i in range(0,order)]
+print(x)
+for i in range(0,order):
+	for j in range(0,order+1):
+		m[i][j]=int(input("Enter elements at["+str(i)+"]["+str(j)+"]"))
+for i in range(0,order):
+	for j in range(0,order):
+		if i>j:
+			c=m[i][j]/m[j][j]
+			for k in range(0,order+1):
+				m[i][k]=m[i][k]-c*m[j][k]
+x[order-1]=m[order-1][order]/m[order-1][order-1]
+for i in range(order-2,-1,-1):
+	s=0
+	for j in range(i+1,order):
+		s=s+m[i][j]*x[j]
+	x[i]=(m[i][order]-s)/m[i][i]
+print(x)
