@@ -1,0 +1,29 @@
+#Power method
+n = int(input("Enter order of matrix:"))
+m = [[0 for j in range(0,n)]for i in range(0,n)]
+x = [0 for i in range(0,n)]
+t = [0 for i in range(0,n)]
+k=0
+for i in range(0,n):
+	for j in range(0,n):
+		m[i][j] = int(input("Enter element at m["+str(i)+"]["+str(j)+"]:"))
+for i in range(0,n):
+	x[i] = int(input("Enter expected eigen vector at x["+str(i)+"]:"))
+while k<10:
+	for i in range(0,n):
+		for j in range(0,n):
+			t[i] = t[i] + m[i][j]*x[j]
+		t[i]=round(t[i],3)
+	x=list(t)
+	maxi = max(x)
+	for i in range(0,n):
+		t[i]=x[i]/maxi
+	if x == t:
+		break
+	else:
+		x=list(t)
+		for i in range(len(x)):
+			t[i]=0
+		#print(x)
+		k=k+1
+print(x)
