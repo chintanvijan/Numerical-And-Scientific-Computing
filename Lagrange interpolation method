@@ -1,0 +1,22 @@
+#Lagrange interpolation
+n = int(input("Enter Range:"))
+x=[]
+y=[]
+sol=0
+mul=1
+for i in range(0,n):
+	inp = int(input("Enter x["+str(i)+"]:"))
+	x.append(inp)
+for i in range(0,n):
+	inp = int(input("Enter y["+str(i)+"]:"))
+	y.append(inp)
+x0 = int(input("Enter value of x whose corresponding y is to be found:"))
+for i in range(0,n):
+	for j in range(0,n):
+		if i!=j:
+			mul = mul*((x0-x[j])/(x[i]-x[j]))
+	sol = sol+(mul*y[i])
+	mul = 1
+print(sol)
+
+
