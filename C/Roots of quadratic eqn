@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void func1(){
+	int x1,x2,a,b,c,d;
+	printf("Enter coefficient of x^2,x^1 and x^0 respectively:");
+	scanf("%d %d %d",&a,&b,&c);
+	d= b*b-4*a*c;
+	d=sqrt(d);
+	x1=(-b+d)/(2*a);
+	x2=(-b-d)/(2*a);
+	printf("%d %d",x1,x2);
+}
+void main(){
+	clrscr();
+       	func1();
+	getch();
+}
